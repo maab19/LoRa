@@ -84,3 +84,6 @@ inputs = tokenizer.apply_chat_template(
 ).to("cuda")
 outputs = model.generate(input_ids=inputs, max_new_tokens=1024, use_cache=True, temperature=1.5, min_p=0.1)
 tokenizer.batch_decode(outputs)
+
+model.save_pretrained("lora_test")
+tokenizer.save_pretrained("lora_test")
